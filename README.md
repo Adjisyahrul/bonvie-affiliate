@@ -1,4 +1,4 @@
-# 🌸 Bonvie Pink Affiliate Co-Pilot
+# 🌸 Bonvie Affiliate Co-Pilot
 
 > Internal affiliate management dashboard — cute, productive, and fully automated 💕
 
@@ -125,6 +125,3 @@ bonvie-affiliate/
 | Primary | `#FF69B4` | Buttons, highlights |
 | Font | Poppins + Quicksand | Body + headings |
 
----
-
-Made with 💕 for Bonvie Affiliate Team
