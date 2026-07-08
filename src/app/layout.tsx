@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import LandingWrapper from "@/components/LandingWrapper";
 import ClientShell from "@/components/ClientShell";
 import FloatingCat from "@/components/FloatingCat";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Bonvie Affiliate Co-Pilot 🌸",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <FloatingCat />
+          <SpeedInsights />
           <Toaster
             position="top-right"
             toastOptions={{
