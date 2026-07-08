@@ -132,7 +132,7 @@ function AffiliateCard({
                 <input
                   id={`${baseId}-username`}
                   type="text"
-                  placeholder="cantik_bonvie"
+                  placeholder="ishmah_cantik"
                   value={form.username}
                   onChange={(e) => onChange(form.id, { username: e.target.value.replace(/^@+/, "") })}
                   className="input-pink rounded-l-none border-l-0 flex-1"
@@ -151,7 +151,7 @@ function AffiliateCard({
           <input
             id={`${baseId}-pic`}
             type="text"
-            placeholder="Sisca Amelia"
+            placeholder="ishmahahaha"
             value={form.picName}
             onChange={(e) => onChange(form.id, { picName: e.target.value })}
             className="input-pink"
