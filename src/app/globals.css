@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-poppins bg-pink-50 text-gray-700 min-h-screen;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(255, 105, 180, 0.10) 0%, transparent 50%);
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  /* ── Pink Button ── */
+  .btn-pink {
+    @apply bg-hotpink text-white font-semibold px-6 py-3 rounded-2xl
+           shadow-cute hover:shadow-cute-lg hover:scale-105
+           transition-all duration-300 cursor-pointer
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  /* ── Outline Button ── */
+  .btn-outline {
+    @apply border-2 border-hotpink text-hotpink font-semibold px-6 py-3 rounded-2xl
+           hover:bg-pink-100 hover:scale-105
+           transition-all duration-300 cursor-pointer;
+  }
+
+  /* ── Card ── */
+  .card {
+    @apply bg-white rounded-3xl shadow-cute p-6;
+  }
+
+  /* ── Form Input ── */
+  .input-pink {
+    @apply w-full border-2 border-pink-200 rounded-2xl px-4 py-3
+           focus:outline-none focus:border-hotpink focus:ring-2 focus:ring-pink-200
+           bg-white placeholder-pink-300 text-gray-700
+           transition-all duration-200;
+  }
+
+  /* ── Label ── */
+  .label-cute {
+    @apply block text-sm font-semibold text-pink-600 mb-1.5;
+  }
+
+  /* ── Metric Card ── */
+  .metric-card {
+    @apply bg-white rounded-3xl shadow-cute p-6 flex flex-col gap-1
+           hover:shadow-cute-lg hover:scale-105 transition-all duration-300;
+  }
+
+  /* ── Table ── */
+  .cute-table {
+    @apply w-full text-sm;
+  }
+  .cute-table thead tr {
+    @apply bg-pink-100 text-pink-700;
+  }
+  .cute-table thead th {
+    @apply px-4 py-3 text-left font-semibold rounded-none first:rounded-tl-2xl last:rounded-tr-2xl;
+  }
+  .cute-table tbody tr {
+    @apply border-b border-pink-50 hover:bg-pink-50 transition-colors duration-150;
+  }
+  .cute-table tbody td {
+    @apply px-4 py-3;
+  }
+
+  /* ── Badge ── */
+  .badge-pink {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold
+           bg-pink-100 text-pink-600;
+  }
+  .badge-green {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold
+           bg-green-100 text-green-600;
+  }
+
+  /* ── Page title ── */
+  .page-title {
+    @apply text-3xl font-bold text-pink-600 font-quicksand;
+  }
+  .page-subtitle {
+    @apply text-sm text-pink-400 mt-1;
+  }
+}
+
+/* Cute scrollbar */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: #FFF0F5; border-radius: 10px; }
+::-webkit-scrollbar-thumb  { background: #FFB6C1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #FF69B4; }
