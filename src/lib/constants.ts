@@ -43,3 +43,23 @@ export const SOW_OPTIONS = [
 export const REQUESTED_BY_OPTIONS  = ["Ishmah", "Nafila", "Otul", "Hani"];
 export const KEPERLUAN_OPTIONS     = ["Endorsement", "Giveaway", "Other"];
 export const PENGIRIMAN_OPTIONS    = ["J&T", "Paxel", "Grab/Gojek", "Tim KOL/AFF yang atur", "JNE YES"];
+
+// ─── Gudang product list (matches "Product Request" sheet dropdown) ───────────
+export const GUDANG_PRODUCTS = [
+  "Gin Tonic 30ml",
+  "Gin Tonic 60ml",
+  "Gin Tonic 150ml",
+  "Tea Tonic 30ml",
+  "Tea Tonic 60ml",
+  "Shampoo Anti Lepek 100ml",
+  "Shampoo Anti Lepek 250ml",
+  "Shampoo Anti Dandruff 100ml",
+  "Shampoo Anti Dandruff 250ml",
+  "Condimask 100ml",
+  "Condimask 250ml",
+  "Hair Oil 30ml",
+  "Bonvie Men Shampoo 100ml",
+  "Bonvie Men Shampoo 250ml",
+  "Bonvie Men Hair Tonic 60ml",
+  "Bonvie Men Hair Serum 30ml",
+];

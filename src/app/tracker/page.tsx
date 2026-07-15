@@ -5,24 +5,23 @@ import toast from "react-hot-toast";
 import type { ContentRow } from "@/lib/googleSheets";
 
 export default function TrackerPage() {
-  const [rows, setRows]         = useState<ContentRow[]>([]);
-  const [loading, setLoading]   = useState(true);
-  const [syncing, setSyncing]   = useState(false);
+  const [rows, setRows]               = useState<ContentRow[]>([]);
+  const [loading, setLoading]         = useState(true);
+  const [syncing, setSyncing]         = useState(false);
+  const [usernameOptions, setUsernameOptions] = useState<string[]>([]);
 
-  // Add video form state
-  const [showAdd, setShowAdd]   = useState(false);
+  const [showAdd, setShowAdd]         = useState(false);
   const [selUsername, setSelUsername] = useState("");
-  const [videoUrl, setVideoUrl] = useState("");
-  const [adding, setAdding]     = useState(false);
+  const [videoUrl, setVideoUrl]       = useState("");
+  const [adding, setAdding]           = useState(false);
 
-  // Inline URL edit
   const [editingRow, setEditingRow]   = useState<number | null>(null);
   const [editUrl, setEditUrl]         = useState("");
   const [savingUrl, setSavingUrl]     = useState(false);
 
   const [syncResult, setSyncResult]   = useState<{ synced: number; failed: number } | null>(null);
 
-  // ─── Fetch rows ────────────────────────────────────────────────────────────
+  // ─── Fetch rows from Internal sheet ────────────────────────────────────────
   const fetchRows = useCallback(async () => {
     setLoading(true);
     try {
@@ -37,16 +36,21 @@ export default function TrackerPage() {
     }
   }, []);
 
-  useEffect(() => { fetchRows(); }, [fetchRows]);
+  // ─── Fetch username dropdown from Internal sheet (PIC=Ishmah, TikTok only) ─
+  const fetchUsernames = useCallback(async () => {
+    try {
+      const res  = await fetch("/api/tracker/usernames");
+      const data = await res.json();
+      if (data.success) setUsernameOptions(data.usernames);
+    } catch {
+      console.error("Failed to fetch usernames");
+    }
+  }, []);
 
-  // Only TikTok usernames for dropdown (Shopee doesn't have video content)
-  const usernameOptions = Array.from(
-    new Set(
-      rows
-        .filter((r) => r.platform === "TikTok" && r.username)
-        .map((r) => r.username)
-    )
-  ).sort();
+  useEffect(() => {
+    fetchRows();
+    fetchUsernames();
+  }, [fetchRows, fetchUsernames]);
 
   // ─── Add video URL to existing row ─────────────────────────────────────────
   const handleAddUrl = async (e: React.FormEvent) => {

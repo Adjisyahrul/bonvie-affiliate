@@ -23,12 +23,17 @@ export async function POST(req: NextRequest) {
         picName:        a.picName,
         waNumber:       a.waNumber,
         products:       Array.isArray(a.products) ? a.products.join(", ") : String(a.products ?? ""),
+        productsArray:  Array.isArray(a.gudangProducts) && a.gudangProducts.length > 0
+                          ? a.gudangProducts                              // dedicated gudang product list
+                          : Array.isArray(a.products) ? a.products : [String(a.products ?? "")],
         address:        a.address,
         timestamp:      now,
         kolTier:        a.kolTier        ?? "",
         persona:        a.persona        ?? "",
         campaignCategory: a.campaignCategory ?? "",
-        productFocus:   a.productFocus   ?? "",
+        productFocus:   Array.isArray(a.productFocus)
+                          ? a.productFocus.join(", ")
+                          : String(a.productFocus ?? ""),
         sow:            a.sow            ?? "",
         tanggalPosting: a.tanggalPosting ?? "",
         rateCard:       a.rateCard       ?? "",
