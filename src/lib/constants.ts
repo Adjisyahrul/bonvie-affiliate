@@ -17,7 +17,7 @@ export const BONVIE_PRODUCTS = [
 ];
 
 // ─── Dropdown options — Sheets Internal ──────────────────────────────────────
-export const PIC_OPTIONS        = ["Ishmah", "Nafila", "OTUL", "LIZA"];
+export const PIC_OPTIONS        = ["Ishmah"];
 export const KOL_TIER_OPTIONS   = ["Mega", "Macro", "Middle", "Micro", "Nano"];
 export const PERSONA_OPTIONS    = [
   "Hair care reviewer", "Lifestyle", "Beauty", "Photoslides",
@@ -40,7 +40,7 @@ export const SOW_OPTIONS = [
 ];
 
 // ─── Dropdown options — Sheets Gudang ────────────────────────────────────────
-export const REQUESTED_BY_OPTIONS  = ["Ishmah", "Nafila", "Otul", "Hani"];
+export const REQUESTED_BY_OPTIONS  = ["Ishmah"];
 export const KEPERLUAN_OPTIONS     = ["Endorsement", "Giveaway", "Other"];
 export const PENGIRIMAN_OPTIONS    = ["J&T", "Paxel", "Grab/Gojek", "Tim KOL/AFF yang atur", "JNE YES"];
 
